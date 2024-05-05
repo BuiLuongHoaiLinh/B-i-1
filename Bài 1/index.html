@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bbf3bb;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 40px;
+            background-color: #fb87c1;
+            color: #0b0a0a;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fa9f7e;
+            color: #110f0f;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .hobby {
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        * {
+  box-sizing:border-box
+}
+h2 {
+  text-align: center;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+/* Ẩn các slider */
+.mySlides {
+    display: none;
+    
+}
+/* Định dạng nội dung Caption */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+ 
+/* định dạng các chấm chuyển đổi các slide */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+/* khi được hover, active đổi màu nền */
+.active, .dot:hover {
+  background-color: #717171;
+}
+ 
+/* Thêm hiệu ứng khi chuyển đổi các slide */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+  -webkit-box-sizing: border-box;
+}
+ 
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+ 
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* CSS cho thanh menu */
+  /* thanh menu */
+  .navbar {
+  text-align: center;
+  background-color: #59db89;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* chữ thanh menu  */
+.navbar a {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(86, 78, 78);
+  padding: 12px 14px;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*    khu blog   */
+.dropbtn {
+  background: color #59db89;
+  color: rgb(86,78,78);
+  padding: 12px 14px;
+  font-size: 20px;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/*  hiện màu khi để chuột vào  */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(230, 219, 193);
+}
+/*   giấu chuyên mục   */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(86,78,78);
+  z-index: 1;
+}
+
+/* khu chuyên mục nhỏ  */
+
+.dropdown-content a {
+  color: rgb(86,78,78);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+/* thanh thả xuống */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  /* CSS cho các thẻ tab chứa nội dung bài viết */
+  .tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+/* nội dung home */
+
+.container { display: flex; } 
+.left { width: 50%; padding: 20px; } 
+.right { width: 50%; padding: 20px; } 
+/*phần nội dung */
+.menu1 {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .menu a {
+      text-align: center;
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .menu a:hover {
+        background-color: #2980b9;
+    }
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: none;
+    }
+    .content.active {
+        display: block;
+    }
+  /* phần ăn uống */
+  .calculator {
+                max-width: 400px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            .calculator h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            .input-group {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .input-group label {
+                margin-bottom: 5px;
+                color: #666;
+                align-self: flex-start;
+            }
+            .input-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+            .button {
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+            }
+            .button:hover {
+                background-color: #2980b9;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 1.2rem;
+                color: #333;
+            }
+            .advice {
+                margin-top: 20px;
+                font-size: 1rem;
+                color: #666;
+                text-align: left;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng các bạn đến với trang cá nhân của mình!!</h1>
+        <img src="https://cdn.glitch.global/93b7a60e-6244-4022-b4e9-de25ef3503f3/thumbnails%2Fe4519a89-2fe2-47ea-a3c5-065fb363da66.image.png?1705583470147" alt="Ảnh cá nhân">
+        <h2>HAPPY PY:))</h2>
+        <p>Chúc các bạn một ngày vui vẻ :3</p>
+    </header>
+<!-- Thanh menu -->
+<div class="navbar">
+  <a href="#home" onclick="openTab(event, 'home')">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Blog 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#" onclick="openTab(event, 'anuong')">Ăn Uống</a>
+      <a href="#" onclick="openTab(event, 'tipsong')">Típ Sống</a>
+    </div>
+  </div>
+</div>
+    <div class="slideshow-container">
+        
+        <div class="mySlides fade">
+          <img src="./img/4.png" style="width:100%">
+          <div class="text"></div>
+        </div>
+       
+        <div class="mySlides fade">
+          <img src="./img/2.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+       
+        <div class="mySlides fade">
+          <img src="./img/3.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+      </div>
+      <br>
+       
+
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(0)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+<main>
+  <h1>Sở thích của tôi</h1>
+  <ul class="hobby">
+      <li>Nấu ăn</li>
+      <li>Đi du lịch, đi phượt</li>
+      <li>Nghe nhạc</li>
+      <li>Xem phim</li>
+      <li>Làm giàu</li>
+  </ul>
+  <p>Bạn có thích người yêu biết nấu ăn không?</p>
+  <form>
+      <input type="text" placeholder="Điền câu trả lời của bạn vào">
+      <button type="submit">Gửi câu trả lời</button>
+  </form>
+  <div>
+      <label>Bạn có thích một cô bạn gái nấm lùn không?</label>
+      <input type="radio" name="girlfriend" value="yes"> Có
+      <input type="radio" name="girlfriend" value="no"> Không
+  </div>
+</main>
+
+<footer>
+  <div>
+      <h3>Tên: Bùi Lương Hoài Linh</h3>
+      <h3>Năm sinh: 24/06/2003</h3>
+      <h3>Địa chỉ: Hòa Cư, Nhơn Hưng, An Nhơn, Bình Định</h3>
+  </div>
+</footer>
+<!-- Các thẻ tab chứa nội dung bài viết -->
+<div id="home" class="tabcontent">
+  <div class="container"> 
+    <div class="left">
+      <img src="img/z5410219275518_06688247e1332e43c7eaeae63c9a8936.jpg" width="400">
+      </div>
+      <div class = " right" >
+        
+        <h2 text align = "center"  style="color: black;"> GIỚI THIỆU VỀ CHÚNG TÔI </h2>
+        <H3 style="color: rgb(23, 63, 70) "> Chào mừng bạn đến với blog của tôi! Tại đây, bạn sẽ được chia sẻ về những trải nghiệm, suy nghĩ và kiến thức về cuộc sống hàng ngày. Tôi mong muốn tạo ra một không gian nơi mọi người có thể cảm thấy thoải mái và chia sẻ với nhau về những điều tốt đẹp nhất của cuộc sống. Hãy cùng nhau khám phá và trải nghiệm những điều mới mẻ qua những bài viết trên blog này!
+          Hy vọng các bài viết sẽ có ích với bạn . Và đừng quên rằng nếu có điều gì muốn chia sẽ thì đừng gần ngại nhé ! 
+        </H3>
+        </div>
+        </div>
+</div>
+              
+  <script>
+      document.querySelectorAll('.menu a').forEach(item => {
+          item.addEventListener('click', event => {
+              const targetId = event.target.getAttribute('href').substring(1);
+              document.querySelectorAll('.content').forEach(content => {
+                  if (content.id === targetId) {
+                      content.classList.add('active');
+                  } else {
+                      content.classList.remove('active');
+                  }
+              });
+          });
+      });
+  </script>
+</div>
+
+<div id="anuong" class="tabcontent">
+  <h2 text - align = " center" > Danh mục :  Ăn uống  </h2>
+  <div class="calculator">
+    <h2>Tính Chỉ Số BMI</h2>
+    <div class="input-group">
+        <label for="weight">Cân nặng (kg)</label>
+        <input type="number" id="weight" placeholder="Nhập cân nặng của bạn">
+    </div>
+    <div class="input-group">
+        <label for="height">Chiều cao (cm)</label>
+        <input type="number" id="height" placeholder="Nhập chiều cao của bạn">
+    </div>
+    <div class="input-group">
+        <label for="age">Tuổi</label>
+        <input type="number" id="age" placeholder="Nhập tuổi của bạn">
+    </div>
+    <button class="button" onclick="calculateBMI()">Tính Toán</button>
+    <div class="result" id="result"></div>
+    <div class="advice" id="advice"></div>
+</div>
+
+<script>
+    function calculateBMI() {
+        var weight = parseFloat(document.getElementById('weight').value);
+        var height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meter
+        var age = parseInt(document.getElementById('age').value);
+        var bmi = weight / (height * height);
+        document.getElementById('result').innerHTML = "Chỉ Số BMI: " + bmi.toFixed(2);
+
+        var advice = "";
+        if (age < 18) {
+            if (bmi < 18.5) {
+                advice = "Chỉ số BMI của bạn dưới mức bình thường. Hãy tham khảo ý kiến của bác sĩ để có chế độ dinh dưỡng phù hợp.";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                advice = "Chỉ số BMI của bạn ở mức bình thường. Hãy duy trì chế độ ăn uống và vận động để giữ gìn sức khỏe.";
+            } else if (bmi >= 25 && bmi < 29.9) {
+                advice = "Chỉ số BMI của bạn ở mức thừa cân. Hãy giảm cân để giữ gìn sức khỏe.";
+            } else {
+                advice = "Chỉ số BMI của bạn ở mức béo phì. Hãy giảm cân để giữ gìn sức khỏe.";
+            }
+        } else {
+            if (bmi < 22) {
+                advice = "Chỉ số BMI của bạn dưới mức bình thường. Hãy tham khảo ý kiến của bác sĩ để có chế độ dinh dưỡng phù hợp.";
+            } else if (bmi >= 22 && bmi < 27) {
+                advice = "Chỉ số BMI của bạn ở mức bình thường. Hãy duy trì chế độ ăn uống và vận động để giữ gìn sức khỏe.";
+            } else {
+                advice = "Chỉ số BMI của bạn ở mức thừa cân hoặc béo phì. Hãy giảm cân để giữ gìn sức khỏe.";
+            }
+        }
+
+        document.getElementById('advice').innerHTML = advice;
+    }
+</script>
+<div class="menu">
+  <a href="#che-do-an-cho-nguoi-moi-bat-dau">Tác Dụng và Chế Độ Ăn Healthy Cho Người Mới Bắt Đầu</a>
+  <a href="#thuc-don-giam-can">Gợi Ý Thực Đơn Ăn Healthy Giảm Cân 7 Ngày</a>
+  
+</div>
+<div id="che-do-an-cho-nguoi-moi-bat-dau" class="content">
+  <h2>Tác Dụng và Chế Độ Ăn Healthy Cho Người Mới Bắt Đầu</h2>
+  <h1>1.TÁC DỤNG CỦA CHẾ ĐỘ ĂN HEALTHY DIET</h1>
+  <p>Không chỉ hỗ trợ tốt cho quá trình giảm cân, các loại thực phẩm sạch trong chế độ ăn healthy còn tạo ra nhiều nguồn năng lượng sảng khoái cho cơ thể. Tuy nhiên, cần đảm bảo đủ lượng F&V (Fruit and Vegetables – Trái cây và rau xanh) được nạp để giúp hạn chế nguy cơ gây béo phì, NCD 5 và kiểm soát tốt lượng đường trong máu.</p>
+  <p><h3>TIÊU THỤ F&V VÀ NGĂN NGỪA NCDS</h3></p>
+  <p>Theo khuyến nghị dinh dưỡng toàn cầu, F&V là thành phần chính trong bất kì chế độ ăn uống lành mạnh. Mỗi 200g rau củ được nạp vào cơ thể mỗi ngày sẽ giúp giảm 10% nguy cơ tử vong sớm, tránh mắc bệnh tim mạch vành, nhồi máu cơ tim, cao huyết áp, đột quỵ, tiểu đường, một số bệnh ung thư và các chứng NCD khác. Việc tăng lượng F&V ngay từ khi còn nhỏ sẽ ngăn ngừa nhiều NCDs.</p>   <p><h3>TIÊU THỤ F&V THẤP LÀ MỘT VẤN ĐỀ SỨC KHỎE TOÀN CẦU</h3></p>
+  <p>Theo thống kê toàn thế giới có 3,9 triệu ca tử vong trong năm 2017 do tiêu thụ không đủ F&V trong chế độ ăn thiết yếu. Ăn nhiều đường, natri, chất béo từ tinh bột chuyển hóa nhanh, thực phẩm đóng hộp, thức ăn nhanh… và không bổ sung rau, củ, quả là thói quen xấu đáng lo ngại của nhiều người hiện nay.</p>
+  <div class="image-container">
+      <img src="https://admin.threexfive.com/uploads/2022_08_healthy-la-gi-3.jpg" width="800px">
+  </div>
+  <p><h3>CÁCH CẢI THIỆN THỰC ĐƠN ĂN UỐNG HEALTHY </h3></p>
+  <p>Sau khi đã cùng Đẹp365 tham vấn về các định nghĩa healthy là gì? Chế độ ăn healthy là gì và healthy food là gì? Chúng ta hãy cùng tìm hiểu sâu hơn về phương pháp cải thiện thực đơn ăn uống healthy như thế nào sẽ đạt chuẩn, hợp lý và hiệu quả nhất bạn nhé!</p>
+  <p>Sự cân bằng dinh dưỡng 3 bữa ăn chính trong ngày cần được cải thiện một cách khoa học luôn là yêu cầu tiên quyết phải lưu ý trong giai đoạn thực hiện chế độ ăn healthy. Bên cạnh đó, cũng có một số vấn đề liên quan đến top những thực phẩm nên và không nên nạp vào cơ thể nhằm thuận lợi cho thực đơn healthy và khoa học mà bạn cần để tâm đến.</p>
+  <p><h4>Những thực phẩm nên nạp vào cơ thể khi áp dụng thực đơn ăn uống healthy:</p></h4>
+  <p>•	Sử dụng những loại thực phẩm giàu chất xơ như các loại rau xanh, hoa quả và trái cây tươi.</p>
+  <p>•	Sử dụng sản phẩm giàu tinh bột nhưng ít calo như: gạo lứt, ngũ cốc nguyên hạt, bí đỏ, khoai tây,…</p>
+  <p>•	Chú trọng nạp vào cơ thể những sản phẩm từ sữa ít béo: sữa/ pho mát ít béo hoặc sữa chua.</p>
+  <p><h4>Những thực phẩm nên hạn chế nạp vào cơ thể khi áp dụng thực đơn ăn uống healthy:</p></h4>
+  <p>•	Các sản phẩm đóng hộp (thịt nguội,…) thức ăn nhanh được chế biến sẵn (xúc xích, cá viên chiên,…)</p>
+  <p>•	Các thực phẩm chiên/ xào nhiều dầu mỡ </p>
+  <p>•	Những thực phẩm/ đồ uống có nhiều đường/có ga: bánh kẹo, mứt, kem, bơ nước ngọt, rượu, bia,…</p>
+  <div class="image-container">
+      <img src="https://admin.threexfive.com/uploads/2022_08_healthy-la-gi-4.jpg">
+  </div>
+</div>
+<div id="thuc-don-giam-can" class="content">
+  <h2>Gợi Ý Thực Đơn Ăn Healthy Giảm Cân 7 Ngày</h2>
+  <p>Để giảm cân nhanh nhưng vẫn đảm bảo sức khỏe. Bạn cần có một kế hoạch rõ ràng, tính toán chi tiết lượng calo nạp vào cơ thể và đặc biệt là biết cách lựa chọn nguồn thực phẩm lành mạnh. Nếu chưa biết bắt đầu từ đâu, bạn có thể tham khảo thực đơn ăn healthy giảm cân 7 ngày sau.
+      <div class="image-container">
+          <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4458-726941575019523-1575019523.png" alt="Hình ảnh mô tả">
+      </div>
+          <h1>1/ Để giảm cân, một ngày bạn cần bao nhiêu calo?</h1>
+          
+          <p>Mỗi người sẽ có nhu cầu calo khác nhau dựa vào tỷ lệ trao đổi chất cơ bản cũng như tần số hoạt động, luyện tập. Đặc biệt, lượng calo còn phụ thuộc vào giới tính, thường thì hàm lượng calo trung bình của nữ giới sẽ thấp hơn nam giới. </p>
+              <p>Theo khuyến cáo, phụ nữ từ 19-52 cần từ 1800 đến 2000 calo mỗi ngày (phụ nữ trẻ cần nhiều hơn phụ nữ lớn tuổi. Trong khi đó, đàn ông từ 19-51 tuổi cần lượng calo từ 2.200 đến 2.4000 mỗi ngày. Để giảm cân, bên cạnh chế độ tập luyện, cơ thể cần cắt giảm lượng calo. Ví dụ với nữ giới nên duy trì chế độ ăn dưới 2000 calo mỗi ngày. Để không ảnh hưởng đến sức khỏe, bạn không nên cắt giảm đột ngột lượng calo mà cần có lịch trình cụ thể, từng bước. Trước hết, bạn cần có những thay đổi cơ bản như sau:</p>
+              <p>•	Thay thế dần dần cơm trắng bằng yến mạch, cơm gạo lứt</p>
+              <p>•	Cắt giảm các thực phẩm kém lành mạnh (nước uống có gas, đồ ngọt, thức ăn dầu mỡ)</p>
+              <p>•	Uống nhiều nước </p>
+              <p>•	Tăng cường rau xanh, trái cây ít đường</p>
+              <p>•	Ngủ đủ giấc, vận động đều đặn</p>
+          
+          <h1> 2/ Gợi ý thực đơn ăn healthy giảm cân 7 ngày</h1>
+          
+          <p>Sau khi cơ thể thích nghi với những thay đổi ở trên, bạn cần có thực đơn giảm cân healthy phù hợp, có thể 1 tuần, 1 tháng hoặc 3 tháng. Lưu ý khi lên thực đơn, bạn nên cố gắng đa dạng các thực phẩm để tránh nhàm chán. Dưới đây là thực đơn gợi ý giảm cân healthy trong 7 ngày, chị em có thể tham khảo.
+              <h1>Thực đơn ăn healthy giảm cân ngày 1:</h1>
+          <p>Buổi sáng: </p>
+          <p><em>
+              <p>•	¾ chén yến mạch cán mỏng</p>
+              <p>•	1 quả chuối</p>
+              <p>•	1 cốc sữa không béo </p>
+          </em> </p>
+                  <div class="image-container">
+                      <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4461-334511575019523-1575019523.png" alt="Hình ảnh mô tả">
+                  </div>
+          <p>Buổi trưa: Bánh sandwich với:</p>
+          <p><em>
+             <p>•	112g ức gà</p>
+             <p>•	1 lát bánh mì hạt</p>
+             <p>•	Rau tùy thích</p>
+             <p>•	Cà chua</p>
+             <p>•	Trái cây ít đường</p>
+             </em></p>
+             <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4457-983071575019523-1575019523.png">
+          </div>
+          <p>Buổi tối:  Cá hồi/cá ngừ ăn kèm khoai tây nghiền, súp lơ</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4462-377931575019523-1575019523.png">
+          </div>
+          <h1>Thực đơn ăn healthy giảm cân ngày 2:</h1> 
+          <p>Buổi sáng: Sinh tố bơ chuối + 2 quả trứng luộc</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4459-603211575019523-1575019523.png">
+          </div>
+          <p>Buổi trưa: Súp rau củ</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4460-160371575019523-1575019523.png">
+          </div>
+          <p>Buổi tối: Ức gà nướng sốt hành ăn kèm rau bó xôi</p>  
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4463-629151575019523-1575019523.png">
+          </div>
+          
+          <h1>Thực đơn ăn healthy giảm cân ngày 3:</h1> 
+          <p>Buổi sáng: Yến mạch + sữa không đường ăn kèm táo xanh</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4464-927821575020055-1575020055.png">
+          </div>
+          <p>Buổi trưa: Ức gà nướng ăn kèm hạnh nhân + sữa chua không đường</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4465-546861575020095-1575020095.png">
+          </div>    
+          <p>Buổi tối: Tôm hấp (112g) + 1 củ khoai tây nướng + sữa chua không đường</p>
+          <h1>Thực đơn ăn healthy giảm cân ngày 4:</h1> 
+          <p>Buổi sáng: Bánh mì hạt ngô</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4466-365911575020568-1575020568.png">
+          </div>
+          <p>Buổi trưa: Súp cà chua ăn kèm bánh mì + thịt bò nướng</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4467-116831575021046-1575021046.png">
+          </div>  
+          <p>Buổi tối: Cá hồi áp chảo ăn kèm ngũ cốc nguyên hạt, táo xanh</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4468-216221575021082-1575021082.png">
+          </div>   
+          <h1>Thực đơn ăn healthy giảm cân ngày 5:</h1> 
+          <p>Buổi sáng: Yến mạch nguyên hạt + sữa không đường + trái cây tùy thích</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4469-365301575021545-1575021545.png">
+          </div>
+          <p>Buổi trưa: Nui xào bò + dâu tây ăn kèm sữa chua</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4470-297411575021579-1575021579.png">
+          </div>  
+          <p>Buổi tối: Cơm gạo lứt + rau luộc + 1 quả trứng luộc hoặc thịt lợn rang sả</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/25/4389-637191574662606-1574662606.png">
+          </div>   
+          <h1>Thực đơn ăn healthy giảm cân ngày 6:</h1> 
+          <p>Buổi sáng: 1 trứng ốp la + 1 bánh mì hạt</p>
+          <p>Buổi trưa: 1 củ khoai lang luộc + cơm gạo lứt + gà áp chảo + 1 quả trứng</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4473-692881575021933-1575021933.png">
+          </div>  
+          <p>Buổi tối: 1 cốc sinh tố bơ + 1 dĩa salad</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4472-619971575021874-1575021874.png">
+          </div>
+          <h1>Thực đơn ăn healthy giảm cân ngày 7:</h1> 
+          <p>Bữa sáng: ½ quả bơ + 2 quả trứng luộc + 1 phần kiwi và rau xanh</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4477-165931575022746-1575022746.png">
+          </div>
+          <p>Buổi trưa: Trứng rán + bông cải xanh hấp + bông điên điển/rau bó xôi</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4476-746051575022675-1575022675.png">
+          </div>  
+          <p>Buổi tối: Salad cá ngừ</p>
+          <div class="image-container">
+              <img src="https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2019/November/29/4475-504401575022641-1575022641.png">
+          </div>    
+          <p> Có nhiều cách giảm cân. Thế nhưng để sở hữu một vóc dáng đẹp cùng một sức khỏe dẻo dai đòi hỏi bạn phải có kế hoạch ăn uống kết hợp tập luyện khoa học, đặc biệt là cần có sự kiên trì trong thời gian dài.
+              </p>
+</div>
+
+<script>
+  document.querySelectorAll('.menu a').forEach(item => {
+      item.addEventListener('click', event => {
+          const targetId = event.target.getAttribute('href').substring(1);
+          document.querySelectorAll('.content').forEach(content => {
+              if (content.id === targetId) {
+                  content.classList.add('active');
+              } else {
+                  content.classList.remove('active');
+              }
+          });
+      });
+  });
+</script>
+
+</div>
+
+<div id="tipsong" class="tabcontent">
+  <h2 text - align = "center "> Danh mục : Típ Sống</h2>
+  <div class="menu">
+    <a href="#chia-se-nhung-van-de-nho">Chia sẽ những vấn đề nhỏ</a>
+    <a href="#hanh-trinh-tim-hieu-su-can-bang">Hành Trình Tìm Hiểu Về Sự Cân Bằng</a>
+  </div>
+  <div id="chia-se-nhung-van-de-nho" class="content">
+      <h2>Chia sẽ những vấn đề nhỏ</h2>
+      <p>Bí Quyết Để Đối Đầu Với Cảm Xúc Trong Môi Trường Làm Việc</p>
+      <p> Trong cuộc sống hàng ngày, chúng ta thường phải đối mặt với nhiều cảm xúc khác nhau, đặc biệt là trong môi trường công việc...</p>
+      <div class="image-container">
+          <img src="https://ggsc.s3.amazonaws.com/images/uploads/Three_Pathways_to_Meaning_in_Life.jpg" width = 700px >
+      </div> 
+     <h2>Quản lý Thời Gian</h2>
+      <p>Dành thời gian để xác định ưu tiên và sử dụng công cụ như lịch và danh sách công việc để tổ chức và quản lý thời gian của bạn.</p></h3>
+        <div class="image-container">
+          <img src="http://icdn.dantri.com.vn/zoom/1200_630/2021/03/01/thoi-gian-1614596778085.jpg" width = 700px >
+      </div>      
+      <h2>Phát triển Kỹ Năng Giao Tiếp</h2>
+  <p>Học cách giao tiếp hiệu quả với mọi người xung quanh bạn. Điều này bao gồm việc lắng nghe kỹ lưỡng và thể hiện ý kiến một<br> cách rõ ràng và tự tin.</p>
+  <p> Việc phát triển khả năng giao tiếp giúp bạn tự tin tromg công việc , cũng như giao tiếp với mọi người hơn .Giúp ta thể hiện<br>
+  bản thân tốt hơn </p> 
+  <div class="image-container">
+    <img src="https://www.way.com.vn/vnt_upload/news/12_2019/hoc-ky-nang-giao-tiep-trong-kinh-doanh_1.jpg" width = 700px >  
+    </div>
+    </div>
+    
+    <div id="hanh-trinh-tim-hieu-su-can-bang" class="content">
+      <h2>Hành Trình Tìm Hiểu Về Sự Cân Bằng Giữa Công Việc và Cuộc Sống Cá Nhân</h2>
+  <h3>1. Xác định Ưu Tiên</h3>
+  <p>Đầu tiên, hãy xác định những gì quan trọng nhất đối với bạn cả trong công việc và cuộc sống <br>
+    cá nhân. Tìm hiểu những gì mang <br>lại hạnh phúc và cảm giác thành công cho bạn.Trong đoạn này, <br>
+    chúng ta đã mô tả việc xác định ưu tiên là một bước quan trọng để tìm hiểu về sự cân bằng giữa <br>
+    công việc và cuộc sống cá nhân. Đồng thời, cũng giải thích rằng việc này giúp chúng ta tập trung <br>
+     vào những gì thực sự quan trọng và mang lại ý nghĩa chocuộc sống. Bạn có thể thay đổi và điều<br>
+     chỉnh nội dung để phản ánh ý kiến của riêng bạn về vấn đề này.</p>
+
+  <div class="image-container">
+    <img src="https://chefjob.vn/wp-content/uploads/2018/01/phan-tich-cong-viec-bi-kip-thanh-cong.jpg" width = 700px >  
+  <h3>2. Tạo Lịch Trình Hợp Lý</h3>
+  <p>Tạo ra một lịch trình làm việc cố định và chia sẻ thời gian cho các hoạt động cá nhân như thể dục,<br>
+    nghỉ ngơi và thư giãn. Điều này giúp bạn duy trì sự cân bằng giữa công việc và cuộc sống cá nhân.</p>
+  <div class="image-container">
+    <img src="https://i.pinimg.com/originals/d7/83/6f/d7836fbbcd256f5efe1577dd227d7de0.png" width = 700px >  
+  <h3>3. Hãy Tận Hưởng Những Khoảnh Khắc Nhỏ</h3>
+  <p>Đừng quên tận hưởng những khoảnh khắc nhỏ trong cuộc sống hàng ngày. Hãy dành thời gian cho gia đình<br>
+     và bạn bè, tham gia vào các hoạt động mà bạn thích và tạo ra những kỷ niệm đáng nhớ.</p>
+  <div class="image-container">
+    <img src="https://www.wowweekends.vn/document_root/upload/articles/image/BrowseContent/LifeStyle/202105/H%E1%BA%A1nh%20ph%C3%BAc%20%26%20Ni%E1%BB%81m%20vui/4.jpg" width = 700px >  
+
+  <h3>4. Hãy Học Cách Tự Đặt Giới Hạn</h2>
+  <p>Biết khi nào nên nói "không" và đặt giới hạn cho bản thân là rất quan trọng. Đừng cho phép công việc chiếm hết tất cả thời gian của bạn và luôn nhớ rằng sức khỏe và sự cân bằng là chìa khóa của sự thành công.</p>
+  <div class="image-container">
+    <img src="http://nhandaovadoisong.com.vn/wp-content/uploads/2019/08/stt-hay-ve-cuoc-doi-1024x576-1.jpg" width = 700px >  
+  
+  <script>
+        document.querySelectorAll('.menu a').forEach(item => {
+            item.addEventListener('click', event => {
+                const targetId = event.target.getAttribute('href').substring(1);
+                document.querySelectorAll('.content').forEach(content => {
+                    if (content.id === targetId) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+    
+</div>
+      
+
+    <script>
+        // Lấy thông tin thời tiết từ một API (ví dụ: OpenWeatherMap)
+        const apiKey = 'YOUR_API_KEY'; // Cần thay thế bằng API key của bạn
+        const city = 'YOUR_CITY'; // Thay thế bằng tên thành phố của bạn
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        async function getWeather() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                const { main, weather } = data;
+                const weatherInfo = `Nhiệt độ: ${main.temp}°C, ${weather[0].description}`;
+                document.getElementById('weather-info').textContent = weatherInfo;
+            } catch (error) {
+                console.log('Error fetching weather data:', error.message);
+            }
+        }
+
+        getWeather();
+    </script>
+</body>
+<script>
+    //khai báo biến slideIndex đại diện cho slide hiện tại
+    var slideIndex;
+    // KHai bào hàm hiển thị slide
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+   
+        slides[slideIndex].style.display = "block";  
+        dots[slideIndex].className += " active";
+        //chuyển đến slide tiếp theo
+        slideIndex++;
+        //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+        if (slideIndex > slides.length - 1) {
+          slideIndex = 0
+        }    
+        //tự động chuyển đổi slide sau 5s
+        setTimeout(showSlides, 5000);
+    }
+    //mặc định hiển thị slide đầu tiên 
+    showSlides(slideIndex = 0);
+   
+   
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    // Mở tab và hiển thị nội dung khi click vào danh mục
+function openTab(evt, tabName) {
+  var i, tabcontent, dropdown;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+  </script>
+</html>
